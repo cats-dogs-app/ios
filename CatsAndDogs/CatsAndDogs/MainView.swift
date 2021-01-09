@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct MainView: View {
+        
     
     func logout(){
         
@@ -35,12 +36,16 @@ struct MainView: View {
                     .background(mainColor)
                     .cornerRadius(8.0).padding(16)
             })
+                        
         }
     }
 }
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
     }
 }
+
+

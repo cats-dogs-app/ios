@@ -12,6 +12,7 @@
 		2FF6112DD29A1DB8C21AE109 /* Pods_CatsAndDogs_CatsAndDogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E31D5AD66F8746CA444D68 /* Pods_CatsAndDogs_CatsAndDogsUITests.framework */; };
 		9F55F9B825A9B04D003809F4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F9B725A9B04D003809F4 /* RegisterView.swift */; };
 		9F55F9BA25A9B60C003809F4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F9B925A9B60C003809F4 /* MainView.swift */; };
+		9F55F9C125A9F755003809F4 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F9C025A9F755003809F4 /* VerificationView.swift */; };
 		9F9568DA258E537800EB2EA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9568D9258E537800EB2EA5 /* AppDelegate.swift */; };
 		9F9568DC258E537800EB2EA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9568DB258E537800EB2EA5 /* SceneDelegate.swift */; };
 		9F9568DE258E537800EB2EA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9568DD258E537800EB2EA5 /* ContentView.swift */; };
@@ -47,6 +48,7 @@
 		58E31D5AD66F8746CA444D68 /* Pods_CatsAndDogs_CatsAndDogsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatsAndDogs_CatsAndDogsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F55F9B725A9B04D003809F4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9F55F9B925A9B60C003809F4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9F55F9C025A9F755003809F4 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		9F9568D6258E537800EB2EA5 /* CatsAndDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatsAndDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9568D9258E537800EB2EA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F9568DB258E537800EB2EA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9F55F9BF25A9E74A003809F4 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				9F9568D9258E537800EB2EA5 /* AppDelegate.swift */,
+				9F9568DB258E537800EB2EA5 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		9F9568CD258E537800EB2EA5 = {
 			isa = PBXGroup;
 			children = (
@@ -135,10 +146,10 @@
 		9F9568D8258E537800EB2EA5 /* CatsAndDogs */ = {
 			isa = PBXGroup;
 			children = (
-				9F9568D9258E537800EB2EA5 /* AppDelegate.swift */,
-				9F9568DB258E537800EB2EA5 /* SceneDelegate.swift */,
+				9F55F9BF25A9E74A003809F4 /* Delegates */,
 				9F9568DD258E537800EB2EA5 /* ContentView.swift */,
 				9F55F9B725A9B04D003809F4 /* RegisterView.swift */,
+				9F55F9C025A9F755003809F4 /* VerificationView.swift */,
 				9F55F9B925A9B60C003809F4 /* MainView.swift */,
 				9F9568DF258E537E00EB2EA5 /* Assets.xcassets */,
 				9F9568E4258E537E00EB2EA5 /* LaunchScreen.storyboard */,
@@ -428,6 +439,7 @@
 				9F9568DA258E537800EB2EA5 /* AppDelegate.swift in Sources */,
 				9F55F9B825A9B04D003809F4 /* RegisterView.swift in Sources */,
 				9F9568DC258E537800EB2EA5 /* SceneDelegate.swift in Sources */,
+				9F55F9C125A9F755003809F4 /* VerificationView.swift in Sources */,
 				9F55F9BA25A9B60C003809F4 /* MainView.swift in Sources */,
 				9F9568DE258E537800EB2EA5 /* ContentView.swift in Sources */,
 			);

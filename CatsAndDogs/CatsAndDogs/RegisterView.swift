@@ -22,7 +22,7 @@ struct RegisterView: View {
     @State var showAlert = false
     @State var alertMessage:String = " none "
     @State var activeUser: String = " none "
-    
+    @State var registered = false
     func register(){
         
         // there may be a need to implement few more checks like if password1 == password2
@@ -43,11 +43,12 @@ struct RegisterView: View {
                 self.alertMessage = error?.localizedDescription ?? ""
                 self.showAlert = true
             } else {
+                print("well done")
+                
                 self.isSuccessful = true
                 self.activeUser = self.email
-                self.alertMessage = "Registered Successfully"
-                self.showAlert = true
-                print("well done")
+                self.verify()
+                self.registered = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                     self.isSuccessful = false
                 }
@@ -55,42 +56,56 @@ struct RegisterView: View {
         }
     }
     
-    var body: some View {
+    func verify(){
+        print("verifying : " + email)
         
-        VStack(alignment: .center) {
-            
-            Text("hello : " + self.activeUser).foregroundColor(mainColor)
-            
-            VStack(alignment: .leading){
-                Text("E Mail").font(.headline).foregroundColor(mainColor)
-                TextField("write your email", text: $email
-                ).background(mainColor).autocapitalization(.none)
-            }.padding(16)
-            VStack(alignment: .leading){
-                Text("Password").font(.headline).foregroundColor(mainColor)
-                TextField("write your password", text: $password).background(mainColor).autocapitalization(.none)
-            }.padding(16)
-            VStack(alignment: .leading){
-                Text("Password Again").font(.headline).foregroundColor(mainColor)
-                TextField("write your password", text: $password2).background(mainColor).autocapitalization(.none)
-            }.padding(16)
-            
-            
-            
-            Button(action: {
-                print("register button clicked")
-                self.register()
+        Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
+            print(error ?? "No error go check your email")
+        })
+    }
+    
+    var body: some View {
+        NavigationView{
+            VStack(alignment: .center) {
                 
-            }, label:{
-                HStack(){
-                    Text("REGISTER").foregroundColor(Color.white)
-                        .padding()
-                        .font(.headline)
-                }.frame(minWidth:0 ,maxWidth: .infinity)
-                    .background(mainColor)
-                    .cornerRadius(8.0).padding(16)
-            }).alert(isPresented: $showAlert) {
-                Alert(title: Text(alertMessage), dismissButton: .default(Text("Got it!")))
+                Text("hello : " + self.activeUser).foregroundColor(mainColor)
+                
+                VStack(alignment: .leading){
+                    Text("E Mail").font(.headline).foregroundColor(mainColor)
+                    TextField("write your email", text: $email
+                    ).background(mainColor).autocapitalization(.none)
+                }.padding(16)
+                VStack(alignment: .leading){
+                    Text("Password").font(.headline).foregroundColor(mainColor)
+                    TextField("write your password", text: $password).background(mainColor).autocapitalization(.none)
+                }.padding(16)
+                VStack(alignment: .leading){
+                    Text("Password Again").font(.headline).foregroundColor(mainColor)
+                    TextField("write your password", text: $password2).background(mainColor).autocapitalization(.none)
+                }.padding(16)
+                
+                
+                
+                Button(action: {
+                    print("register button clicked")
+                    self.register()
+                    
+                }, label:{
+                    HStack(){
+                        Text("REGISTER").foregroundColor(Color.white)
+                            .padding()
+                            .font(.headline)
+                    }.frame(minWidth:0 ,maxWidth: .infinity)
+                        .background(mainColor)
+                        .cornerRadius(8.0).padding(16)
+                }).alert(isPresented: $showAlert) {
+                    Alert(title: Text(alertMessage), dismissButton: .default(Text("Got it!")))
+                }
+                
+                
+                NavigationLink(destination: VerificationView(), isActive: $registered) {
+                    EmptyView()
+                }
             }
         }
     }

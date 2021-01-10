@@ -12,7 +12,8 @@ import Firebase
 var mainColor: Color = Color.green
 
 struct ContentView: View {
-    
+    @EnvironmentObject var appState : AppState
+
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -34,6 +35,8 @@ struct ContentView: View {
             } else {
                 self.isSuccessful = true
                 self.activeUser = self.email
+                self.appState.state = "Main"
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                     self.isSuccessful = false
                 }

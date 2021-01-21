@@ -27,7 +27,7 @@ struct AppRootView: View {
             if appState.state == "Main"{
                 MainView()
             }else {
-                ContentView()
+                LoginWelcomeView()
             }
         }
     }

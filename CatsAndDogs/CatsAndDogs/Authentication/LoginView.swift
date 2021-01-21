@@ -13,7 +13,7 @@ let mainColor : Color = Color.green
 let cd_lightgreen : Color = Color("cd_lightgreen")
 let cd_darkgreen : Color = Color("cd_darkgreen")
 
-struct ContentView: View {
+struct LoginView: View {
     @EnvironmentObject var appState : AppState
     
     @State private var email: String = ""
@@ -49,9 +49,6 @@ struct ContentView: View {
     
     var body: some View {
         
-        NavigationView{
-            
-            
             VStack() {
                 
                 VStack(alignment: .leading){
@@ -94,14 +91,13 @@ struct ContentView: View {
                 }
                 
             }//Vstack
-        }.background(LinearGradient(gradient: .init(colors: [cd_lightgreen,cd_darkgreen]), startPoint: .top, endPoint: .bottom))//NavigationView
         
     }
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginView()
     }
 }

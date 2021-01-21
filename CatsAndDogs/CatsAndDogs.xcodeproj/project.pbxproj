@@ -10,12 +10,13 @@
 		0CC265E41205F7ADBA3D6F65 /* Pods_CatsAndDogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4775B345103F618FC364F0 /* Pods_CatsAndDogsTests.framework */; };
 		1CC590B8B4DA2941DD5920B4 /* Pods_CatsAndDogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE90EC82CCD56C0A4144351 /* Pods_CatsAndDogs.framework */; };
 		2FF6112DD29A1DB8C21AE109 /* Pods_CatsAndDogs_CatsAndDogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E31D5AD66F8746CA444D68 /* Pods_CatsAndDogs_CatsAndDogsUITests.framework */; };
+		9F416CEA25B9A40D00C62F47 /* LoginWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F416CE925B9A40D00C62F47 /* LoginWelcomeView.swift */; };
 		9F55F9B825A9B04D003809F4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F9B725A9B04D003809F4 /* RegisterView.swift */; };
 		9F55F9BA25A9B60C003809F4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F9B925A9B60C003809F4 /* MainView.swift */; };
 		9F55F9C125A9F755003809F4 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F9C025A9F755003809F4 /* VerificationView.swift */; };
 		9F9568DA258E537800EB2EA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9568D9258E537800EB2EA5 /* AppDelegate.swift */; };
 		9F9568DC258E537800EB2EA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9568DB258E537800EB2EA5 /* SceneDelegate.swift */; };
-		9F9568DE258E537800EB2EA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9568DD258E537800EB2EA5 /* ContentView.swift */; };
+		9F9568DE258E537800EB2EA5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9568DD258E537800EB2EA5 /* LoginView.swift */; };
 		9F9568E0258E537E00EB2EA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F9568DF258E537E00EB2EA5 /* Assets.xcassets */; };
 		9F9568E3258E537E00EB2EA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F9568E2258E537E00EB2EA5 /* Preview Assets.xcassets */; };
 		9F9568E6258E537E00EB2EA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F9568E4258E537E00EB2EA5 /* LaunchScreen.storyboard */; };
@@ -47,13 +48,14 @@
 		4AE90EC82CCD56C0A4144351 /* Pods_CatsAndDogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatsAndDogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4775B345103F618FC364F0 /* Pods_CatsAndDogsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatsAndDogsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E31D5AD66F8746CA444D68 /* Pods_CatsAndDogs_CatsAndDogsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatsAndDogs_CatsAndDogsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F416CE925B9A40D00C62F47 /* LoginWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginWelcomeView.swift; path = CatsAndDogs/Authentication/LoginWelcomeView.swift; sourceTree = SOURCE_ROOT; };
 		9F55F9B725A9B04D003809F4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterView.swift; path = CatsAndDogs/Authentication/RegisterView.swift; sourceTree = SOURCE_ROOT; };
 		9F55F9B925A9B60C003809F4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9F55F9C025A9F755003809F4 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VerificationView.swift; path = CatsAndDogs/Authentication/VerificationView.swift; sourceTree = SOURCE_ROOT; };
 		9F9568D6258E537800EB2EA5 /* CatsAndDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatsAndDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9568D9258E537800EB2EA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CatsAndDogs/Delegates/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		9F9568DB258E537800EB2EA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = CatsAndDogs/Delegates/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
-		9F9568DD258E537800EB2EA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = CatsAndDogs/Authentication/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		9F9568DD258E537800EB2EA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = CatsAndDogs/Authentication/LoginView.swift; sourceTree = SOURCE_ROOT; };
 		9F9568DF258E537E00EB2EA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F9568E2258E537E00EB2EA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F9568E5258E537E00EB2EA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -190,7 +192,8 @@
 		9FA1149125AB02FB00B52FAC /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				9F9568DD258E537800EB2EA5 /* ContentView.swift */,
+				9F416CE925B9A40D00C62F47 /* LoginWelcomeView.swift */,
+				9F9568DD258E537800EB2EA5 /* LoginView.swift */,
 				9F55F9B725A9B04D003809F4 /* RegisterView.swift */,
 				9F55F9C025A9F755003809F4 /* VerificationView.swift */,
 			);
@@ -275,7 +278,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Halil Ibrahim Kasapoglu";
 				TargetAttributes = {
 					9F9568D5258E537800EB2EA5 = {
@@ -448,12 +451,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F9568DA258E537800EB2EA5 /* AppDelegate.swift in Sources */,
+				9F416CEA25B9A40D00C62F47 /* LoginWelcomeView.swift in Sources */,
 				9FA1149325AB0ED800B52FAC /* AppRootView.swift in Sources */,
 				9F55F9B825A9B04D003809F4 /* RegisterView.swift in Sources */,
 				9F9568DC258E537800EB2EA5 /* SceneDelegate.swift in Sources */,
 				9F55F9C125A9F755003809F4 /* VerificationView.swift in Sources */,
 				9F55F9BA25A9B60C003809F4 /* MainView.swift in Sources */,
-				9F9568DE258E537800EB2EA5 /* ContentView.swift in Sources */,
+				9F9568DE258E537800EB2EA5 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +530,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -586,6 +591,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

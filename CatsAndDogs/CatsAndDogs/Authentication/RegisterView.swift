@@ -65,7 +65,6 @@ struct RegisterView: View {
     }
     
     var body: some View {
-        NavigationView{
             VStack(alignment: .center) {
                 
                 Text("hello : " + self.activeUser).foregroundColor(mainColor)
@@ -108,7 +107,6 @@ struct RegisterView: View {
                 }
             }
         }
-    }
 }
 
 struct RegisterView_Previews: PreviewProvider {

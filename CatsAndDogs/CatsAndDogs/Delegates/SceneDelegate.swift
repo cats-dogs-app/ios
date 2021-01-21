@@ -37,13 +37,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+       
     }
-    
+/* 
     func changeRootView(_ contentView: AnyView){
         self.window?.rootViewController = UIHostingController(rootView: contentView)
     }
     func reloadRootView(){
-        var contentView :AnyView = AnyView(ContentView())
+        var contentView :AnyView = AnyView(LoginWelcomeView())
 
         if (Auth.auth().currentUser != nil) {
             print(Auth.auth().currentUser?.email ?? " no email ")
@@ -51,7 +52,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         self.window?.rootViewController = UIHostingController(rootView: contentView)
     }
-    
+    */
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

@@ -49,48 +49,55 @@ struct LoginView: View {
     
     var body: some View {
         
-            VStack() {
+        VStack(alignment :.leading) {
+            
+            Spacer()
+            
+            VStack(alignment: .leading){
+                Text("Welcome !").font(.system(size: 48)).bold().foregroundColor(Color("cd_darkgrey")).padding(.bottom)
                 
-                VStack(alignment: .leading){
-                    Text("E Mail").font(.headline).foregroundColor(mainColor)
-                    HStack(){
-                        TextField("Type your email", text: $email).background(Color.white).autocapitalization(.none).font(.headline).padding(16.0)
-                    }.background(mainColor).cornerRadius(8.0)
-                }.padding(16)
-                                
-                VStack(alignment: .leading){
-                    Text("Password").font(.headline).foregroundColor(mainColor)
-                    HStack(){
-                        TextField("Type your password", text: $password).autocapitalization(.none).font(.headline).padding(16.0)
-                    }.background(mainColor).cornerRadius(8.0)
-                    
-                }.padding(16)
-                
-                
-                
-                Button(action: {
-                    print("login button clicked")
-                    self.login()
-                    
-                }, label:{
-                    HStack(){
-                        Text("LOGIN").foregroundColor(Color.white)
-                            .padding()
-                            .font(.headline)
-                    }.frame(minWidth:0 ,maxWidth: .infinity)
-                    .background(cd_lightgreen)
-                    .cornerRadius(8.0).padding(16)
-                }).alert(isPresented: $showAlert) {
-                    Alert(title: Text("Login Failed"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
+                Text("E Mail").font(.headline).foregroundColor(Color("cd_darkgrey"))
+                HStack(){
+                    TextField("Type your email", text: $email).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
+                }
+            }.padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 32))
+            
+            VStack(alignment: .leading){
+                Text("Password").font(.headline).foregroundColor(Color("cd_darkgrey"))
+                HStack(){
+                    TextField("Type your password", text: $password).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
                 }
                 
-                VStack(alignment : .trailing){
-                    NavigationLink(destination : RegisterView()){
-                        Text("Register").foregroundColor(mainColor).background(cd_darkgreen)
-                    }
-                }
+            }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
+            
+            Button(action: {
+                print("login button clicked")
+                self.login()
                 
-            }//Vstack
+            }, label: {
+                HStack(){
+                    Text("LOGIN").foregroundColor(Color.white)
+                        .padding()
+                        .font(.headline)
+                }.frame(minWidth:0 ,maxWidth: .infinity)
+                .background(mainColor)
+                .cornerRadius(8.0).padding(EdgeInsets(top: 16, leading: 32, bottom: 64, trailing: 32))
+            }).alert(isPresented: $showAlert) {
+                Alert(title: Text("Login Failed"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
+            }
+            
+            HStack(){
+                Text("Don't have an account ? ").foregroundColor(Color("cd_lightgreen"))
+                
+                NavigationLink (
+                    destination: RegisterView(),
+                    label: {
+                        Text("Register").foregroundColor(Color("cd_darkgreen"))
+                    })
+            }.padding(EdgeInsets(top: 0, leading: 32, bottom: 32, trailing: 0))
+            
+        }.frame(
+            minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading).edgesIgnoringSafeArea(.bottom)//Vstack
         
     }
 }

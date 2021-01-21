@@ -18,6 +18,9 @@ struct ArcShape : Shape {
     }
 }
 struct LoginWelcomeView: View {
+    
+    @State var gologin = false
+    
     init() {
         let coloredAppearance = UINavigationBarAppearance()
             coloredAppearance.configureWithOpaqueBackground()
@@ -36,12 +39,18 @@ struct LoginWelcomeView: View {
             
             VStack(alignment: .leading){
                 
+                NavigationLink(destination: LoginView(), isActive: $gologin) {
+                    EmptyView()
+                }
+                
                 VStack(alignment: .leading){
-                    Text("Greetings !").font(.system(size: 48)).bold().foregroundColor(.white).padding(.bottom)
+                    Text("Welcome !").font(.system(size: 48)).bold().foregroundColor(.white).padding(.bottom)
                     Text("Nice to see you back").font(.system(size:24)).foregroundColor(.white)
                 }.padding(EdgeInsets(top: 128, leading: 32, bottom: 0, trailing: 0))
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    self.gologin = true
+                }, label: {
                         HStack(){
                             Text("LOGIN").foregroundColor(Color.white)
                                 .padding()
@@ -57,7 +66,7 @@ struct LoginWelcomeView: View {
                     Text("Don't have an account ? ").foregroundColor(Color("cd_lightgreen"))
                 
                     NavigationLink (
-                        destination: LoginView(),
+                        destination: RegisterView(),
                         label: {
                             Text("Register").foregroundColor(Color("cd_darkgreen"))
                         })

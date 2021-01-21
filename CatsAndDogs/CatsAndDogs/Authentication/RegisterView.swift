@@ -65,48 +65,74 @@ struct RegisterView: View {
     }
     
     var body: some View {
-            VStack(alignment: .center) {
+        
+        
+        VStack(alignment: .leading) {
+            
+            Spacer()
+            
+            
+                        
+            VStack(alignment: .leading){
+                /*Text("Register !").font(.system(size: 48)).bold().foregroundColor(Color("cd_darkgrey")).padding(.bottom)*/
                 
-                Text("hello : " + self.activeUser).foregroundColor(mainColor)
-                
-                VStack(alignment: .leading){
-                    Text("E Mail").font(.headline).foregroundColor(mainColor)
-                    TextField("write your email", text: $email
-                    ).background(mainColor).autocapitalization(.none)
-                }.padding(16)
-                VStack(alignment: .leading){
-                    Text("Password").font(.headline).foregroundColor(mainColor)
-                    TextField("write your password", text: $password).background(mainColor).autocapitalization(.none)
-                }.padding(16)
-                VStack(alignment: .leading){
-                    Text("Password Again").font(.headline).foregroundColor(mainColor)
-                    TextField("write your password", text: $password2).background(mainColor).autocapitalization(.none)
-                }.padding(16)
-                
-                
-                
-                Button(action: {
-                    print("register button clicked")
-                    self.register()
-                    
-                }, label:{
-                    HStack(){
-                        Text("REGISTER").foregroundColor(Color.white)
-                            .padding()
-                            .font(.headline)
-                    }.frame(minWidth:0 ,maxWidth: .infinity)
-                        .background(mainColor)
-                        .cornerRadius(8.0).padding(16)
-                }).alert(isPresented: $showAlert) {
-                    Alert(title: Text(alertMessage), dismissButton: .default(Text("Got it!")))
+                Text("E Mail").font(.headline).foregroundColor(Color("cd_darkgrey"))
+                HStack(){
+                    TextField("Type your email", text: $email).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
+                }
+            }.padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 32))
+            
+            VStack(alignment: .leading){
+                Text("Password").font(.headline).foregroundColor(Color("cd_darkgrey"))
+                HStack(){
+                    TextField("Type your password", text: $password).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
                 }
                 
-                
-                NavigationLink(destination: VerificationView(), isActive: $registered) {
-                    EmptyView()
+                Text("Confirm Password").font(.headline).foregroundColor(Color("cd_darkgrey")).padding(.top, 4)
+                HStack(){
+                    TextField("Type your password", text: $password2).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
                 }
+                
+            }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
+            
+ /*           VStack(alignment: .leading){
+                Text("E Mail").font(.headline).foregroundColor(mainColor)
+                TextField("write your email", text: $email
+                ).background(mainColor).autocapitalization(.none)
+            }.padding(16)
+            VStack(alignment: .leading){
+                Text("Password").font(.headline).foregroundColor(mainColor)
+                TextField("write your password", text: $password).background(mainColor).autocapitalization(.none)
+            }.padding(16)
+            VStack(alignment: .leading){
+                Text("Password Again").font(.headline).foregroundColor(mainColor)
+                TextField("write your password", text: $password2).background(mainColor).autocapitalization(.none)
+            }.padding(16)*/
+            
+            
+            
+            Button(action: {
+                print("register button clicked")
+                self.register()
+                
+            }, label:{
+                HStack(){
+                    Text("REGISTER").foregroundColor(Color.white)
+                        .padding()
+                        .font(.headline)
+                }.frame(minWidth:0 ,maxWidth: .infinity)
+                .background(mainColor)
+                .cornerRadius(8.0).padding(EdgeInsets(top: 16, leading: 32, bottom: 64, trailing: 32))
+            }).alert(isPresented: $showAlert) {
+                Alert(title: Text(alertMessage), dismissButton: .default(Text("Got it!")))
+            }
+            
+            
+            NavigationLink(destination: VerificationView(), isActive: $registered) {
+                EmptyView()
             }
         }
+    }
 }
 
 struct RegisterView_Previews: PreviewProvider {

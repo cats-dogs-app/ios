@@ -9,11 +9,13 @@
 import SwiftUI
 import Firebase
 
-var mainColor: Color = Color.green
+let mainColor : Color = Color.green
+let cd_lightgreen : Color = Color("cd_lightgreen")
+let cd_darkgreen : Color = Color("cd_darkgreen")
 
 struct ContentView: View {
     @EnvironmentObject var appState : AppState
-
+    
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -49,21 +51,25 @@ struct ContentView: View {
         
         NavigationView{
             
-            VStack(alignment: .center) {
-                
-                Text("active user : " + self.activeUser).foregroundColor(mainColor)
+            
+            VStack() {
                 
                 VStack(alignment: .leading){
                     Text("E Mail").font(.headline).foregroundColor(mainColor)
-                    TextField("write your email", text: $email).background(mainColor).autocapitalization(.none)
+                    HStack(){
+                        TextField("Type your email", text: $email).background(Color.white).autocapitalization(.none).font(.headline).padding(16.0)
+                    }.background(mainColor).cornerRadius(8.0)
                 }.padding(16)
-                
-                
+                                
                 VStack(alignment: .leading){
                     Text("Password").font(.headline).foregroundColor(mainColor)
-                    TextField("write your password", text: $password).background(mainColor).autocapitalization(.none)
+                    HStack(){
+                        TextField("Type your password", text: $password).autocapitalization(.none).font(.headline).padding(16.0)
+                    }.background(mainColor).cornerRadius(8.0)
                     
                 }.padding(16)
+                
+                
                 
                 Button(action: {
                     print("login button clicked")
@@ -75,21 +81,24 @@ struct ContentView: View {
                             .padding()
                             .font(.headline)
                     }.frame(minWidth:0 ,maxWidth: .infinity)
-                        .background(mainColor)
-                        .cornerRadius(8.0).padding(16)
+                    .background(cd_lightgreen)
+                    .cornerRadius(8.0).padding(16)
                 }).alert(isPresented: $showAlert) {
                     Alert(title: Text("Login Failed"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
                 }
                 
-                
-                NavigationLink(destination : RegisterView()){
-                    Text("Register Instead").foregroundColor(mainColor)
+                VStack(alignment : .trailing){
+                    NavigationLink(destination : RegisterView()){
+                        Text("Register").foregroundColor(mainColor).background(cd_darkgreen)
+                    }
                 }
                 
-            }
-        }
+            }//Vstack
+        }.background(LinearGradient(gradient: .init(colors: [cd_lightgreen,cd_darkgreen]), startPoint: .top, endPoint: .bottom))//NavigationView
+        
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

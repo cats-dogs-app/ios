@@ -8,6 +8,50 @@
 
 import SwiftUI
 import Firebase
+import CoreMotion
+
+struct MotionView: View {
+    @State private var steps : Int?
+    
+    private let pedometer : CMPedometer = CMPedometer()
+    private var isPedometerAvailable: Bool {
+        return CMPedometer.isPedometerEventTrackingAvailable() && CMPedometer.isDistanceAvailable() && CMPedometer.isStepCountingAvailable()
+    }
+    
+    func initializePedometer(){
+
+        if isPedometerAvailable{
+            
+            guard let startDate = Calendar.current.date(byAdding: .day,value: -7, to: Date()) else {
+                return
+            }
+            pedometer.queryPedometerData(from: startDate, to: Date()) { (data, error) in
+                guard let data = data, error == nil else {print("no pedometer data mate"); return }
+                steps = data.numberOfSteps.intValue
+                print(data)
+                print(steps ?? " --- ")
+            }
+        }else {
+            print("pedometer not available mate")
+        }
+    }
+    
+    
+    
+    var body: some View {
+        VStack(){
+            Text("Motion Data")
+            Divider()
+            Text("Total Step")
+            Text((steps != nil) ? "\(steps!)" : " ").onAppear(perform: {
+                self.initializePedometer();
+            })
+            
+        }.background(Color.blue)
+        //background(Color.blue)
+    }
+}
+
 
 struct MainView: View {
     @EnvironmentObject var appState : AppState
@@ -44,6 +88,9 @@ struct MainView: View {
     var body: some View {
         
         VStack(alignment: .center) {
+
+            MotionView()
+
             Text("Hello, You are in the realm of cats and dogs!").foregroundColor(mainColor)
             Text("Its good to see you " + (Auth.auth().currentUser?.email ?? "!!! err: i dont know who u are !!!")).foregroundColor(mainColor)
             Button(action: {

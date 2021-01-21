@@ -21,6 +21,7 @@ struct VerificationView: View {
         
     var body: some View {
         NavigationView{
+            
             VStack(alignment: .center) {
                 Text("We have sent you a verfication email. Go check it! After verification you can proceed to login page").foregroundColor(mainColor)
                 

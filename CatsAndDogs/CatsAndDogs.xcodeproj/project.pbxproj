@@ -24,6 +24,16 @@
 		9F9568F1258E537E00EB2EA5 /* CatsAndDogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9568F0258E537E00EB2EA5 /* CatsAndDogsTests.swift */; };
 		9F9568FC258E537E00EB2EA5 /* CatsAndDogsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9568FB258E537E00EB2EA5 /* CatsAndDogsUITests.swift */; };
 		9F95690A258E982F00EB2EA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F956909258E982F00EB2EA5 /* GoogleService-Info.plist */; };
+		9F9F76C125D1340C008DABC6 /* CatsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F76C025D1340C008DABC6 /* CatsTabView.swift */; };
+		9F9F76C925D13501008DABC6 /* PedometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F76C825D13501008DABC6 /* PedometerView.swift */; };
+		9F9F76D125D13749008DABC6 /* DogsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F76D025D13749008DABC6 /* DogsTabView.swift */; };
+		9F9F76D925D13822008DABC6 /* StatsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F76D825D13822008DABC6 /* StatsTabView.swift */; };
+		9F9F76E225D1591F008DABC6 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F76E125D1591F008DABC6 /* Dog.swift */; };
+		9F9F76EA25D159A5008DABC6 /* DogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F76E925D159A5008DABC6 /* DogRow.swift */; };
+		9F9F76EF25D16FF4008DABC6 /* dogs.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F9F76EE25D16FF4008DABC6 /* dogs.json */; };
+		9F9F76F425D170BD008DABC6 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F76F325D170BD008DABC6 /* ModelData.swift */; };
+		9F9F76FE25D18F55008DABC6 /* DogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F76FD25D18F55008DABC6 /* DogListView.swift */; };
+		9F9F770325D1925A008DABC6 /* DogFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F770225D1925A008DABC6 /* DogFormView.swift */; };
 		9FA1149325AB0ED800B52FAC /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA1149225AB0ED800B52FAC /* AppRootView.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +81,16 @@
 		9F9568FB258E537E00EB2EA5 /* CatsAndDogsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsAndDogsUITests.swift; sourceTree = "<group>"; };
 		9F9568FD258E537E00EB2EA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F956909258E982F00EB2EA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9F9F76C025D1340C008DABC6 /* CatsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CatsTabView.swift; path = CatsAndDogs/MainTabs/CatsTabView.swift; sourceTree = SOURCE_ROOT; };
+		9F9F76C825D13501008DABC6 /* PedometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PedometerView.swift; path = CatsAndDogs/MainTabs/PedometerView.swift; sourceTree = SOURCE_ROOT; };
+		9F9F76D025D13749008DABC6 /* DogsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DogsTabView.swift; path = CatsAndDogs/MainTabs/DogsTabView.swift; sourceTree = SOURCE_ROOT; };
+		9F9F76D825D13822008DABC6 /* StatsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatsTabView.swift; path = CatsAndDogs/MainTabs/StatsTabView.swift; sourceTree = SOURCE_ROOT; };
+		9F9F76E125D1591F008DABC6 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dog.swift; path = "CatsAndDogs/Objects or Undefined/Dog.swift"; sourceTree = SOURCE_ROOT; };
+		9F9F76E925D159A5008DABC6 /* DogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DogRow.swift; path = "CatsAndDogs/Objects or Undefined/DogRow.swift"; sourceTree = SOURCE_ROOT; };
+		9F9F76EE25D16FF4008DABC6 /* dogs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dogs.json; sourceTree = "<group>"; };
+		9F9F76F325D170BD008DABC6 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelData.swift; path = CatsAndDogs/Model/ModelData.swift; sourceTree = SOURCE_ROOT; };
+		9F9F76FD25D18F55008DABC6 /* DogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DogListView.swift; path = "CatsAndDogs/Objects or Undefined/DogListView.swift"; sourceTree = SOURCE_ROOT; };
+		9F9F770225D1925A008DABC6 /* DogFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DogFormView.swift; path = "CatsAndDogs/Objects or Undefined/DogFormView.swift"; sourceTree = SOURCE_ROOT; };
 		9FA1149225AB0ED800B52FAC /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		A16B82CBC6339CEF4F454137 /* Pods-CatsAndDogs-CatsAndDogsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatsAndDogs-CatsAndDogsUITests.debug.xcconfig"; path = "Target Support Files/Pods-CatsAndDogs-CatsAndDogsUITests/Pods-CatsAndDogs-CatsAndDogsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB8ECE9C229DC7DCF88C839C /* Pods-CatsAndDogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatsAndDogs.release.xcconfig"; path = "Target Support Files/Pods-CatsAndDogs/Pods-CatsAndDogs.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,8 +174,12 @@
 		9F9568D8258E537800EB2EA5 /* CatsAndDogs */ = {
 			isa = PBXGroup;
 			children = (
+				9F9F76F925D17131008DABC6 /* Model */,
+				9F9F76F825D17128008DABC6 /* Resources */,
+				9F9F76E025D158F6008DABC6 /* Objects or Undefined */,
 				9FA1149225AB0ED800B52FAC /* AppRootView.swift */,
 				9F55F9B925A9B60C003809F4 /* MainView.swift */,
+				9F9F76BF25D133C5008DABC6 /* MainTabs */,
 				9FA1149125AB02FB00B52FAC /* Authentication */,
 				9F55F9BF25A9E74A003809F4 /* Delegates */,
 				9F9568DF258E537E00EB2EA5 /* Assets.xcassets */,
@@ -193,6 +217,48 @@
 			);
 			path = CatsAndDogsUITests;
 			sourceTree = "<group>";
+		};
+		9F9F76BF25D133C5008DABC6 /* MainTabs */ = {
+			isa = PBXGroup;
+			children = (
+				9F9F76C025D1340C008DABC6 /* CatsTabView.swift */,
+				9F9F76D025D13749008DABC6 /* DogsTabView.swift */,
+				9F9F76C825D13501008DABC6 /* PedometerView.swift */,
+				9F9F76D825D13822008DABC6 /* StatsTabView.swift */,
+			);
+			name = MainTabs;
+			path = CatsAndDogs/MainTabs;
+			sourceTree = SOURCE_ROOT;
+		};
+		9F9F76E025D158F6008DABC6 /* Objects or Undefined */ = {
+			isa = PBXGroup;
+			children = (
+				9F9F76E125D1591F008DABC6 /* Dog.swift */,
+				9F9F76E925D159A5008DABC6 /* DogRow.swift */,
+				9F9F76FD25D18F55008DABC6 /* DogListView.swift */,
+				9F9F770225D1925A008DABC6 /* DogFormView.swift */,
+			);
+			name = "Objects or Undefined";
+			path = "CatsAndDogs/Objects or Undefined";
+			sourceTree = SOURCE_ROOT;
+		};
+		9F9F76F825D17128008DABC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F9F76EE25D16FF4008DABC6 /* dogs.json */,
+			);
+			name = Resources;
+			path = CatsAndDogs/Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		9F9F76F925D17131008DABC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F9F76F325D170BD008DABC6 /* ModelData.swift */,
+			);
+			name = Model;
+			path = CatsAndDogs/Model;
+			sourceTree = SOURCE_ROOT;
 		};
 		9FA1149125AB02FB00B52FAC /* Authentication */ = {
 			isa = PBXGroup;
@@ -329,6 +395,7 @@
 				9F9568E6258E537E00EB2EA5 /* LaunchScreen.storyboard in Resources */,
 				9F95690A258E982F00EB2EA5 /* GoogleService-Info.plist in Resources */,
 				9F9568E3258E537E00EB2EA5 /* Preview Assets.xcassets in Resources */,
+				9F9F76EF25D16FF4008DABC6 /* dogs.json in Resources */,
 				9F9568E0258E537E00EB2EA5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,11 +526,20 @@
 			files = (
 				9F9568DA258E537800EB2EA5 /* AppDelegate.swift in Sources */,
 				9F416CEA25B9A40D00C62F47 /* LoginWelcomeView.swift in Sources */,
+				9F9F76F425D170BD008DABC6 /* ModelData.swift in Sources */,
+				9F9F76C925D13501008DABC6 /* PedometerView.swift in Sources */,
 				9FA1149325AB0ED800B52FAC /* AppRootView.swift in Sources */,
+				9F9F76D125D13749008DABC6 /* DogsTabView.swift in Sources */,
+				9F9F76C125D1340C008DABC6 /* CatsTabView.swift in Sources */,
+				9F9F76D925D13822008DABC6 /* StatsTabView.swift in Sources */,
+				9F9F76EA25D159A5008DABC6 /* DogRow.swift in Sources */,
 				9F55F9B825A9B04D003809F4 /* RegisterView.swift in Sources */,
 				9F9568DC258E537800EB2EA5 /* SceneDelegate.swift in Sources */,
 				9F55F9C125A9F755003809F4 /* VerificationView.swift in Sources */,
 				9F55F9BA25A9B60C003809F4 /* MainView.swift in Sources */,
+				9F9F76FE25D18F55008DABC6 /* DogListView.swift in Sources */,
+				9F9F76E225D1591F008DABC6 /* Dog.swift in Sources */,
+				9F9F770325D1925A008DABC6 /* DogFormView.swift in Sources */,
 				9F9568DE258E537800EB2EA5 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,7 +649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -629,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -648,7 +724,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CatsAndDogs/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CatsAndDogs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -669,7 +745,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CatsAndDogs/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CatsAndDogs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

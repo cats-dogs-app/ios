@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "name":"Namalama",
+        "weight":15,
+    },
+    {
+        "id":2,
+        "name":"Kopecik",
+        "weight":14
+    },
+    {
+        "id":3,
+        "name":"KucuKucu",
+        "weight":10
+    },
+    {
+        "id":4,
+        "name":"Havhav",
+        "weight":9
+    }
+]

@@ -21,17 +21,17 @@ struct DogsTabView: View {
         NavigationView(){
             VStack(){
                 
-                NavigationLink(destination: DogFormView().environmentObject(modelData), isActive: $newForm) {
+                NavigationLink(destination: PetFormView().environmentObject(modelData), isActive: $newForm) {
                     EmptyView()
                 }
-                DogListView().environmentObject(modelData)
+                PetListView().environmentObject(modelData)
                 
                 Spacer()
                 
-                if (modelData.dogs.count == 0){
+                if (modelData.pets.count == 0){
                     Text("Lets add your first dog!")
                 }else {
-                    Text("You have \(modelData.dogs.count) dog")
+                    Text("You have \(modelData.pets.count) dog")
                 }
                 
                 Button(action: {

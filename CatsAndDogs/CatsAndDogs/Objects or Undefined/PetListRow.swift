@@ -9,21 +9,21 @@
 import Foundation
 import SwiftUI
 
-struct DogRow: View {
-    var dog: Dog
+struct PetListRow: View {
+    var pet: Pet
 
     var body: some View {
         HStack {
-            Text("DOG \(dog.name) is \(dog.weight)kg")
+            Text("Pet \(pet.name) is \(pet.weight)kg")
         }
     }
 }
 
-struct DogRow_Previews: PreviewProvider {
+struct PetListRow_Previews: PreviewProvider {
     
-    static var dogs = ModelData().dogs
+    static var pets = ModelData().pets
     
     static var previews: some View {
-        DogRow(dog: dogs[0])
+        PetListRow(pet: pets[0])
     }
 }

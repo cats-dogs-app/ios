@@ -8,27 +8,53 @@
 
 import SwiftUI
 
-struct DogFormView: View {
+struct PetFormView: View {
     
     @Environment(\.presentationMode) var presentation
     
     @EnvironmentObject var modelData : ModelData
-
+    
     @State var name: String = ""
     @State var weight: String = ""
-
-    func addNewDog(){
+    
+    func json(from object:Any) -> String? {
+        guard let data = try? JSONSerialization.data(withJSONObject: object, options: []) else {
+            return nil
+        }
+        return String(data: data, encoding: String.Encoding.utf8)
+    }
+    
+    func addNewPet(){
         let w = Int(weight) ?? -1
         if (w == -1){
             print("weight cannot be converted to int")
             return
         }else{
             print(w)
-            var newdogid = 1
-            newdogid = (modelData.dogs.last?.id ?? 0) + 1
-            let newdog = Dog(id:newdogid , name:self.name, weight: w)
-            print(newdog)
-            modelData.dogs.append(newdog)
+            var newpetid = 1
+            newpetid = (modelData.pets.last?.id ?? 0) + 1
+            let newpet = Pet(id:newpetid , name:self.name, weight: w)
+            print(newpet)
+            modelData.pets.append(newpet)
+            
+            // json-izer
+            var jsonStr : String = "["
+            for pet in modelData.pets {
+                jsonStr += pet.json() + ","
+            }
+            jsonStr.removeLast()
+            jsonStr += "]"
+            // json-izer
+            
+            print(modelData.pets)
+            print(jsonStr)
+            do {
+                try FilesManager().save(fileNamed: "petx.json", data: Data(jsonStr.utf8))
+            }catch{
+                print(error)
+            }//write("pets.json", jsonStr)
+            
+            
             //modelData.dogs.append(newdog)
             self.presentation.wrappedValue.dismiss()
         }
@@ -36,33 +62,33 @@ struct DogFormView: View {
     }
     
     var body: some View {
-     
+        
         VStack(alignment: .leading) {
             
             Spacer()
-        
+            
             
             VStack(alignment: .leading){
-                Text("Add new dog !").font(.system(size: 48)).bold().foregroundColor(Color("cd_darkgrey")).padding(.bottom)
+                Text("Add new pet !").font(.system(size: 48)).bold().foregroundColor(Color("cd_darkgrey")).padding(.bottom)
                 
                 Text("Name").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("name of your dog", text: $name).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
+                    TextField("name of your pet", text: $name).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
                 }
             }.padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 32))
             
             VStack(alignment: .leading){
                 Text("Weight").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("weight of your dog", text: $weight).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
+                    TextField("weight of your pet", text: $weight).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
                 }
-
+                
             }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
-
+            
             
             Button(action: {
-                print("add new dog button clicked")
-                self.addNewDog()
+                print("add new pet button clicked")
+                self.addNewPet()
                 
             }, label:{
                 HStack(){
@@ -79,8 +105,8 @@ struct DogFormView: View {
     }
 }
 
-struct DogFormView_Previews: PreviewProvider {
+struct PetFormView_Previews: PreviewProvider {
     static var previews: some View {
-        DogFormView().environmentObject(ModelData())
+        PetFormView().environmentObject(ModelData())
     }
 }

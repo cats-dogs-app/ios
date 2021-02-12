@@ -8,19 +8,21 @@
 
 import SwiftUI
 
-struct DogListView: View{
+struct PetListView: View{
 
     @EnvironmentObject var modelData: ModelData
 
     var body: some View {
-        List(modelData.dogs,id:\.id){ dog in
-            DogRow(dog: dog)
+        List(modelData.pets,id:\.id){ pet in
+            NavigationLink(destination: PetDetailsView(pet: pet)) {
+                PetListRow(pet: pet)
+            }
         }
     }
 }
 
-struct DogListView_Previews: PreviewProvider {
+struct PetListView_Previews: PreviewProvider {
     static var previews: some View {
-        DogListView().environmentObject(ModelData())
+        PetListView().environmentObject(ModelData())
     }
 }

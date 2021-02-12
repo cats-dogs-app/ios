@@ -9,15 +9,23 @@
 import Foundation
 import SwiftUI
 
-struct Dog: Hashable,Codable {
+struct Pet: Hashable,Codable {
     var id: Int
+    var type: String
     var name: String
     var weight: Int
     
-    init(id: Int , name : String , weight : Int) {
+    init(id: Int ,name : String , weight : Int) {
         self.id = id
+        self.type = "dog"
         self.name = name
         self.weight = weight
+    }
+    
+    func json() -> String{
+        let jsonStr : String = "{\"id\":\(self.id),\"type\":\"\(self.type)\",\"name\":\"\(self.name)\",\"weight\":\(self.weight)}";
+        print(jsonStr);
+        return jsonStr;
     }
     /*
      /// implement it later

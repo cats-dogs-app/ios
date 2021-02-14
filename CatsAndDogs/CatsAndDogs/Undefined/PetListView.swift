@@ -28,7 +28,7 @@ struct PetListView: View{
     
     var body: some View {
         List(getList(),id:\.id){ pet in
-            NavigationLink(destination: PetDetailsView(pet: pet)) {
+            NavigationLink(destination: PetDetailsView(pet: pet).environmentObject(modelData)) {
                 PetListRow(pet: pet)
             }
         }

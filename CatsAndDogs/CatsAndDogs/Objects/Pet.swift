@@ -15,6 +15,12 @@ struct Pet: Hashable,Codable {
     var name: String
     var weight: Int
     
+    init() {
+        self.id = 0
+        self.type = "dog"
+        self.name = "havhav"
+        self.weight = 0
+    }
     init(id: Int , type: String , name : String , weight : Int) {
         self.id = id
         self.type = type

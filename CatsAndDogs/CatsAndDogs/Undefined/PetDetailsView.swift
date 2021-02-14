@@ -10,22 +10,25 @@ import SwiftUI
 
 struct PetDetailsView: View {
     
+    @EnvironmentObject var modelData : ModelData
     var pet: Pet
     
     var body: some View {
         
         VStack(alignment: .leading) {
             
+            FeedingListView(pet: pet).environmentObject(modelData)
+            
             Spacer()
             
             NavigationLink(
-                destination: FeedFormView().environmentObject(ModelData()),
+                destination: FeedFormView().environmentObject(modelData),
                 label: {
                     Text("New Feed")
                 })
             
             NavigationLink(
-                destination: FeedingFormView(),
+                destination: FeedingFormView(pet: pet).environmentObject(modelData),
                 label: {
                     Text("Feed your pet")
                 })
@@ -41,6 +44,6 @@ struct PetDetailsView_Previews: PreviewProvider {
     static var pets = ModelData().pets
 
     static var previews: some View {
-        PetDetailsView(pet: pets[0])
+        PetDetailsView(pet: pets[0] ).environmentObject(ModelData())
     }
 }

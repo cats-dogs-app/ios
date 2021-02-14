@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "id":1,
+        "petId":1,
+        "feedId":1,
+        "amount":10,
+        "date":"yyyy-MM-dd'T'HH:mm:ss"
+    }
+]

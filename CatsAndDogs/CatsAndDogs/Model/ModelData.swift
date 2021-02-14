@@ -10,39 +10,34 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-    @Published var pets: [Pet] = loadPets()// = load("pets.json")
-    
+    @Published var pets: [Pet] = load("pets.json")
+    @Published var feeds : [Feed] = load("feeds.json")
+    @Published var feedings : [Feeding] = load("feedings.json")
 }
 
-func loadPets() -> [Pet]{
-    print("let the load begin !!!! ")
+func load<T:Decodable>(_ filename: String) -> T{
     
+    print("let the load begin !!!! ")
+    let emptyData = Data("[]".utf8)
+
     do {
-        let data: Data = try FilesManager().read(fileNamed:"petx.json")
-        print(String(decoding: data, as: UTF8.self))
+        let data: Data = try FilesManager().read(fileNamed:filename)
         return loadWithData(data)
+        
     }catch FilesManager.Error.fileNotExists{
-        print(" file not exits ")
-        let data = Data("[]".utf8)
-                
-        print("dude we did it")
         do {
-            try FilesManager().save(fileNamed: "petx.json", data: data)
-            
+            try FilesManager().save(fileNamed: filename, data: emptyData)
         }
         catch{
             print(error)
         }
-        return loadWithData(data)
-        
     }catch {
         print(error)
     }
-    let data = Data("[]".utf8)
-    return loadWithData(data)
+    return loadWithData(emptyData)
 }
 
-func load<T: Decodable>(_ filename: String) -> T {
+func loadFromJson<T: Decodable>(_ filename: String) -> T {
     let data: Data
     
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
@@ -63,6 +58,7 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
+
 func loadWithData<T: Decodable>(_ data: Data) -> T {
     print(String(decoding: data, as: UTF8.self))
     do {

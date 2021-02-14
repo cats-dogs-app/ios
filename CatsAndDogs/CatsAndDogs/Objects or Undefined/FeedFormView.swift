@@ -1,60 +1,53 @@
 //
-//  DogFormView.swift
+//  FeedFormView.swift
 //  CatsAndDogs
 //
-//  Created by Halil Ibrahim Kasapoglu on 8.02.2021.
+//  Created by Halil Ibrahim Kasapoglu on 12.02.2021.
 //  Copyright © 2021 Halil Ibrahim Kasapoglu. All rights reserved.
 //
 
 import SwiftUI
 
-struct PetFormView: View {
+struct FeedFormView: View {
     
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var modelData : ModelData
     
-    @State var typeFilter : String = "dog"
     @State var name: String = ""
-    @State var weight: String = ""
+    @State var calorie: String = ""
     
-/*    func json(from object:Any) -> String? {
-        guard let data = try? JSONSerialization.data(withJSONObject: object, options: []) else {
-            return nil
-        }
-        return String(data: data, encoding: String.Encoding.utf8)
-    }*/
-    
-    func addNewPet(){
-        let w = Int(weight) ?? -1
+    func addNewFeed(){
+        
+        print(modelData.feeds)
+        
+        let w = Int(calorie) ?? -1
         if (w == -1){
-            print("weight cannot be converted to int")
+            print("calorie cannot be converted to int")
             return
         }else{
             print(w)
-            var newpetid = 1
-            newpetid = (modelData.pets.last?.id ?? 0) + 1
-            let newpet = Pet(id:newpetid , type: typeFilter , name:self.name, weight: w)
-            print(newpet)
-            modelData.pets.append(newpet)
+            var newfeedid = 1
+            newfeedid = (modelData.feeds.last?.id ?? 0) + 1
+            let newfeed = Feed(id:newfeedid , name:self.name, calorie: w)
+            print(newfeed)
+            modelData.feeds.append(newfeed)
             
             // json-izer
             var jsonStr : String = "["
-            for pet in modelData.pets {
-                jsonStr += pet.json() + ","
+            for feed in modelData.feeds {
+                jsonStr += feed.json() + ","
             }
             jsonStr.removeLast()
             jsonStr += "]"
             // json-izer
             
-            print(modelData.pets)
+            print(modelData.feeds)
             print(jsonStr)
             do {
-                try FilesManager().save(fileNamed: "pets.json", data: Data(jsonStr.utf8))
+                try FilesManager().save(fileNamed: "feeds.json", data: Data(jsonStr.utf8))
             }catch{
                 print(error)
             }
-            
-            
             self.presentation.wrappedValue.dismiss()
         }
         
@@ -68,18 +61,18 @@ struct PetFormView: View {
             
             
             VStack(alignment: .leading){
-                Text("Add new \(typeFilter) !").font(.system(size: 48)).bold().foregroundColor(Color("cd_darkgrey")).padding(.bottom)
+                Text("Add new feed!").font(.system(size: 48)).bold().foregroundColor(Color("cd_darkgrey")).padding(.bottom)
                 
                 Text("Name").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("name of your pet", text: $name).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
+                    TextField("name of the feed", text: $name).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
                 }
             }.padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 32))
             
             VStack(alignment: .leading){
-                Text("Weight").font(.headline).foregroundColor(Color("cd_darkgrey"))
+                Text("Calorie").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("weight of your pet", text: $weight).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
+                    TextField("calorie of the feed", text: $calorie).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
                 }
                 
             }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
@@ -87,7 +80,7 @@ struct PetFormView: View {
             
             Button(action: {
                 print("add new pet button clicked")
-                self.addNewPet()
+                self.addNewFeed()
                 
             }, label:{
                 HStack(){
@@ -104,8 +97,8 @@ struct PetFormView: View {
     }
 }
 
-struct PetFormView_Previews: PreviewProvider {
+struct FeedFormView_Previews: PreviewProvider {
     static var previews: some View {
-        PetFormView().environmentObject(ModelData())
+        FeedFormView().environmentObject(ModelData())
     }
 }

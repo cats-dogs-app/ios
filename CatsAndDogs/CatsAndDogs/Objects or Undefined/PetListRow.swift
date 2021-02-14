@@ -14,7 +14,7 @@ struct PetListRow: View {
 
     var body: some View {
         HStack {
-            Text("Pet \(pet.name) is \(pet.weight)kg")
+            Text("\(pet.type) \(pet.name) is \(pet.weight)kg")
         }
     }
 }

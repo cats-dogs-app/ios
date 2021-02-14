@@ -1,41 +1,34 @@
 //
-//  CatsTabView.swift
+//  FeedsTabView.swift
 //  CatsAndDogs
 //
-//  Created by Halil Ibrahim Kasapoglu on 8.02.2021.
+//  Created by Halil Ibrahim Kasapoglu on 14.02.2021.
 //  Copyright © 2021 Halil Ibrahim Kasapoglu. All rights reserved.
 //
 
 import SwiftUI
 
-struct CatsTabView: View {
+struct FeedsTabView: View {
     
     @EnvironmentObject var modelData : ModelData
     @State var newForm : Bool = false
     
     var body: some View {
         
-        NavigationView(){
+        NavigationView{
             VStack(){
                 
-                NavigationLink(destination: PetFormView(typeFilter:"cat").environmentObject(modelData), isActive: $newForm) {
+                NavigationLink(destination: FeedFormView().environmentObject(modelData), isActive: $newForm) {
                     EmptyView()
                 }
-                PetListView(typeFilter:"cat").environmentObject(modelData)
                 
-                Spacer()
-                
-                if (modelData.pets.count == 0){
-                    Text("Lets add your first cat!")
-                }else {
-                    Text("You have \(modelData.pets.count) pet")
-                }
+                FeedListView().environmentObject(modelData)
                 
                 Button(action: {
                     self.newForm = true
                 }, label: {
                     HStack(){
-                        Text("New Cat").foregroundColor(Color.white)
+                        Text("New Feed").foregroundColor(Color.white)
                             .padding()
                             .font(.headline)
                     }.frame(minWidth:0 ,maxWidth: .infinity)
@@ -44,13 +37,12 @@ struct CatsTabView: View {
                 })
             }
         }
+        
     }
-    
 }
 
-
-struct CatsTabView_Previews: PreviewProvider {
+struct FeedsTabView_Previews: PreviewProvider {
     static var previews: some View {
-        CatsTabView().environmentObject(ModelData())
+        FeedsTabView().environmentObject(ModelData())
     }
 }

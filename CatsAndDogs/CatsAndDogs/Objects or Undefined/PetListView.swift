@@ -11,9 +11,23 @@ import SwiftUI
 struct PetListView: View{
 
     @EnvironmentObject var modelData: ModelData
-
+    @State var typeFilter : String?
+    
+    func getList() -> [Pet]{
+        if (typeFilter != nil){
+            return filteredPets
+        }
+        else {
+            return modelData.pets
+        }
+    }
+    
+    var filteredPets : [Pet] {
+        modelData.pets.filter{pet in (pet.type == typeFilter)}
+    }
+    
     var body: some View {
-        List(modelData.pets,id:\.id){ pet in
+        List(getList(),id:\.id){ pet in
             NavigationLink(destination: PetDetailsView(pet: pet)) {
                 PetListRow(pet: pet)
             }

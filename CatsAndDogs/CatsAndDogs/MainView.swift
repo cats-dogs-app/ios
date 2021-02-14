@@ -10,52 +10,12 @@ import SwiftUI
 import Firebase
 import CoreMotion
 
-struct MotionView: View {
-    @State private var steps : Int?
-    
-    private let pedometer : CMPedometer = CMPedometer()
-    private var isPedometerAvailable: Bool {
-        return CMPedometer.isPedometerEventTrackingAvailable() && CMPedometer.isDistanceAvailable() && CMPedometer.isStepCountingAvailable()
-    }
-    
-    func initializePedometer(){
-        
-        if isPedometerAvailable{
-            
-            guard let startDate = Calendar.current.date(byAdding: .day,value: -7, to: Date()) else {
-                return
-            }
-            pedometer.queryPedometerData(from: startDate, to: Date()) { (data, error) in
-                guard let data = data, error == nil else {print("no pedometer data mate"); return }
-                steps = data.numberOfSteps.intValue
-                print(data)
-                print(steps ?? " --- ")
-            }
-        }else {
-            print("pedometer not available mate")
-        }
-    }
-    
-    
-    
-    var body: some View {
-        VStack(){
-            Text("Motion Data")
-            Divider()
-            Text("Total Step")
-            Text((steps != nil) ? "\(steps!)" : " ").onAppear(perform: {
-                self.initializePedometer();
-            })
-            
-        }.background(Color.blue)
-        //background(Color.blue)
-    }
-}
 
 
 struct MainView: View {
     @EnvironmentObject var appState : AppState
-    
+    @StateObject private var modelData = ModelData()
+
     func logout(){
         
         do {
@@ -72,11 +32,11 @@ struct MainView: View {
             CatsTabView().tabItem{
                 Image(systemName: "person")
                 Text("Cats")
-            }
+            }.environmentObject(modelData)
             DogsTabView().tabItem{
                 Image(systemName: "person")
                 Text("Dogs")
-            }
+            }.environmentObject(modelData)
             StatsTabView().tabItem{
                 Image(systemName: "pencil")
                 Text("Stats")
@@ -85,6 +45,10 @@ struct MainView: View {
                 Image(systemName: "heart")
                 Text("Pedometer")
             }
+            FeedsTabView().tabItem {
+                Image(systemName: "pencil")
+                Text("Feeds")
+            }.environmentObject(modelData)
         }
         
         

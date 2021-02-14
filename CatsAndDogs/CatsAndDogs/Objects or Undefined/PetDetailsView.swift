@@ -14,7 +14,26 @@ struct PetDetailsView: View {
     
     var body: some View {
         
-        Text(pet.json())
+        VStack(alignment: .leading) {
+            
+            Spacer()
+            
+            NavigationLink(
+                destination: FeedFormView().environmentObject(ModelData()),
+                label: {
+                    Text("New Feed")
+                })
+            
+            NavigationLink(
+                destination: FeedingFormView(),
+                label: {
+                    Text("Feed your pet")
+                })
+
+            Text(pet.json())
+
+        }
+        
     }
 }
 

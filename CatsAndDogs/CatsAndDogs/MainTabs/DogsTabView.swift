@@ -10,9 +10,10 @@ import SwiftUI
 
 struct DogsTabView: View {
     
+    @EnvironmentObject var modelData : ModelData
+    
     @State var newForm : Bool = false
     
-    @StateObject private var modelData = ModelData()
 /*    func addDog() {
         newForm = true
     }*/
@@ -21,17 +22,17 @@ struct DogsTabView: View {
         NavigationView(){
             VStack(){
                 
-                NavigationLink(destination: PetFormView().environmentObject(modelData), isActive: $newForm) {
+                NavigationLink(destination: PetFormView(typeFilter:"dog").environmentObject(modelData), isActive: $newForm) {
                     EmptyView()
                 }
-                PetListView().environmentObject(modelData)
-                
+                PetListView(typeFilter:"dog").environmentObject(modelData)
+
                 Spacer()
                 
                 if (modelData.pets.count == 0){
                     Text("Lets add your first dog!")
                 }else {
-                    Text("You have \(modelData.pets.count) dog")
+                    Text("You have \(modelData.pets.count) pet")
                 }
                 
                 Button(action: {
@@ -52,6 +53,6 @@ struct DogsTabView: View {
 
 struct DogsTabView_Previews: PreviewProvider {
     static var previews: some View {
-        DogsTabView()
+        DogsTabView().environmentObject(ModelData())
     }
 }

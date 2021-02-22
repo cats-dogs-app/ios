@@ -65,6 +65,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9FEE24C225DD3882007DF258 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		17BD8D5BFEFC2DAF794C6E75 /* Pods-CatsAndDogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatsAndDogs.debug.xcconfig"; path = "Target Support Files/Pods-CatsAndDogs/Pods-CatsAndDogs.debug.xcconfig"; sourceTree = "<group>"; };
 		4AE90EC82CCD56C0A4144351 /* Pods_CatsAndDogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatsAndDogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +195,16 @@
 			path = CatsAndDogs/Objects;
 			sourceTree = SOURCE_ROOT;
 		};
+		9F6C924625D957E00043733D /* Roots */ = {
+			isa = PBXGroup;
+			children = (
+				9FA1149225AB0ED800B52FAC /* AppRootView.swift */,
+				9F55F9B925A9B60C003809F4 /* MainView.swift */,
+			);
+			name = Roots;
+			path = CatsAndDogs/Roots;
+			sourceTree = SOURCE_ROOT;
+		};
 		9F9568CD258E537800EB2EA5 = {
 			isa = PBXGroup;
 			children = (
@@ -210,11 +233,10 @@
 				9F9F76F825D17128008DABC6 /* Resources */,
 				9F9F76F925D17131008DABC6 /* Model */,
 				9F6C91B425D948880043733D /* Objects */,
-				9F9F76E025D158F6008DABC6 /* Undefined */,
-				9FA1149225AB0ED800B52FAC /* AppRootView.swift */,
-				9F55F9B925A9B60C003809F4 /* MainView.swift */,
-				9F9F76BF25D133C5008DABC6 /* MainTabs */,
 				9FA1149125AB02FB00B52FAC /* Authentication */,
+				9F6C924625D957E00043733D /* Roots */,
+				9F9F76BF25D133C5008DABC6 /* MainTabs */,
+				9F9F76E025D158F6008DABC6 /* Undefined */,
 				9F55F9BF25A9E74A003809F4 /* Delegates */,
 				9F9568DF258E537E00EB2EA5 /* Assets.xcassets */,
 				9F9568E4258E537E00EB2EA5 /* LaunchScreen.storyboard */,
@@ -335,12 +357,15 @@
 				9F9568D3258E537800EB2EA5 /* Frameworks */,
 				9F9568D4258E537800EB2EA5 /* Resources */,
 				E0D7308302A3E49B793CE576 /* [CP] Embed Pods Frameworks */,
+				9FEE24C225DD3882007DF258 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CatsAndDogs;
+			packageProductDependencies = (
+			);
 			productName = CatsAndDogs;
 			productReference = 9F9568D6258E537800EB2EA5 /* CatsAndDogs.app */;
 			productType = "com.apple.product-type.application";
@@ -417,6 +442,8 @@
 				tr,
 			);
 			mainGroup = 9F9568CD258E537800EB2EA5;
+			packageReferences = (
+			);
 			productRefGroup = 9F9568D7258E537800EB2EA5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

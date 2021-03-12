@@ -109,8 +109,11 @@ class FirebaseDataManager: NSObject {
             print("=======================")
             print("==let the fetch begin==")
             print("=======================")
-            let value = snapshot.value as? [String: Any]
-            for item in value!.keys{
+            guard let value = snapshot.value as? [String: Any] else {
+                print("bruh no value")
+                return
+            }
+            for item in value.keys{
                 self.loadFile(head: item)
             }
             print("=======================")
@@ -130,13 +133,15 @@ class FirebaseDataManager: NSObject {
         
         self.ref.child("users").child(user.uid).child(head).observeSingleEvent(of: .value) { (snapshot) in
             
-            guard let value = snapshot.value as? [String : Any] else {
+            print(snapshot)
+            print(snapshot.value)
+            guard let value = snapshot.value as? [Any] else {
                 print("bruh " + head)
                 return
             }
-            for i in value.keys{
+            /*for i in value.keys{
                 keys.append(i)
-            }
+            }*/
             
             for key in keys {
                 self.ref.child("users").child(user.uid).child(head).child(key).observeSingleEvent(of: .value) { (snapshot) in

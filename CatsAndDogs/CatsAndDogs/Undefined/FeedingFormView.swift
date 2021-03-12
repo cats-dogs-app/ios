@@ -53,6 +53,7 @@ struct FeedingFormView: View {
             print(jsonStr)
             do {
                 try FilesManager().save(fileNamed: "feedings.json", data: Data(jsonStr.utf8))
+                FirebaseDataManager.manager.saveData(head: "feedings", jsonStr: newFeeding.json(), id: newfeedingId)
             }catch{
                 print(error)
             }

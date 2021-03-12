@@ -1,0 +1,10 @@
+#
+json to dictionary converter in FirebaseDataManager has a critical issue.
+If json elements contains ',' or ':' inside them parser brokes
+
+#
+jsonizer function is a total mess again in FirebaseDataManager
+If some element can be converted to Int but it is a String I think things will go wild a little 
+
+
+

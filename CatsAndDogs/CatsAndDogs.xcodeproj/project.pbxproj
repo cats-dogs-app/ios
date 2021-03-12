@@ -10,6 +10,7 @@
 		0CC265E41205F7ADBA3D6F65 /* Pods_CatsAndDogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4775B345103F618FC364F0 /* Pods_CatsAndDogsTests.framework */; };
 		1CC590B8B4DA2941DD5920B4 /* Pods_CatsAndDogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE90EC82CCD56C0A4144351 /* Pods_CatsAndDogs.framework */; };
 		2FF6112DD29A1DB8C21AE109 /* Pods_CatsAndDogs_CatsAndDogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E31D5AD66F8746CA444D68 /* Pods_CatsAndDogs_CatsAndDogsUITests.framework */; };
+		9F2D622F25F6463B0063D8C2 /* FirebaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D622E25F6463B0063D8C2 /* FirebaseDataManager.swift */; };
 		9F416CEA25B9A40D00C62F47 /* LoginWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F416CE925B9A40D00C62F47 /* LoginWelcomeView.swift */; };
 		9F416D1025B9D27A00C62F47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F416D1225B9D27A00C62F47 /* Localizable.strings */; };
 		9F55F9B825A9B04D003809F4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F55F9B725A9B04D003809F4 /* RegisterView.swift */; };
@@ -45,6 +46,7 @@
 		9FB8578225D6B3C20099F9D5 /* feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FB8578025D6B3C20099F9D5 /* feeds.json */; };
 		9FB8578325D6B3C20099F9D5 /* feedings.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FB8578125D6B3C20099F9D5 /* feedings.json */; };
 		9FB8578825D6B40F0099F9D5 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8578725D6B40F0099F9D5 /* Feeding.swift */; };
+		9FD1726925E91B220017BB89 /* Deneme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1726825E91B220017BB89 /* Deneme.swift */; };
 		9FF5679025D91911007DB611 /* FeedsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5678F25D91911007DB611 /* FeedsTabView.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,7 @@
 		4AE90EC82CCD56C0A4144351 /* Pods_CatsAndDogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatsAndDogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4775B345103F618FC364F0 /* Pods_CatsAndDogsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatsAndDogsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E31D5AD66F8746CA444D68 /* Pods_CatsAndDogs_CatsAndDogsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatsAndDogs_CatsAndDogsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2D622E25F6463B0063D8C2 /* FirebaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataManager.swift; sourceTree = "<group>"; };
 		9F416CE925B9A40D00C62F47 /* LoginWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginWelcomeView.swift; path = CatsAndDogs/Authentication/LoginWelcomeView.swift; sourceTree = SOURCE_ROOT; };
 		9F416D0C25B9D1EF00C62F47 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9F416D1125B9D27A00C62F47 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 		9FB8578025D6B3C20099F9D5 /* feeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds.json; sourceTree = "<group>"; };
 		9FB8578125D6B3C20099F9D5 /* feedings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feedings.json; sourceTree = "<group>"; };
 		9FB8578725D6B40F0099F9D5 /* Feeding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Feeding.swift; path = CatsAndDogs/Objects/Feeding.swift; sourceTree = SOURCE_ROOT; };
+		9FD1726825E91B220017BB89 /* Deneme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deneme.swift; sourceTree = "<group>"; };
 		9FF5678F25D91911007DB611 /* FeedsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsTabView.swift; sourceTree = "<group>"; };
 		A16B82CBC6339CEF4F454137 /* Pods-CatsAndDogs-CatsAndDogsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatsAndDogs-CatsAndDogsUITests.debug.xcconfig"; path = "Target Support Files/Pods-CatsAndDogs-CatsAndDogsUITests/Pods-CatsAndDogs-CatsAndDogsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB8ECE9C229DC7DCF88C839C /* Pods-CatsAndDogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatsAndDogs.release.xcconfig"; path = "Target Support Files/Pods-CatsAndDogs/Pods-CatsAndDogs.release.xcconfig"; sourceTree = "<group>"; };
@@ -298,6 +302,7 @@
 				9F6C91BA25D949000043733D /* PetFormView.swift */,
 				9F6C91BB25D949000043733D /* PetListRow.swift */,
 				9F6C91B925D949000043733D /* PetListView.swift */,
+				9FD1726825E91B220017BB89 /* Deneme.swift */,
 			);
 			name = Undefined;
 			path = CatsAndDogs/Undefined;
@@ -319,6 +324,7 @@
 			children = (
 				9F9F76F325D170BD008DABC6 /* ModelData.swift */,
 				9F8FA92E25D531230022F9EC /* FilesManager.swift */,
+				9F2D622E25F6463B0063D8C2 /* FirebaseDataManager.swift */,
 			);
 			name = Model;
 			path = CatsAndDogs/Model;
@@ -617,9 +623,11 @@
 				9F6C91BD25D949000043733D /* FeedingFormView.swift in Sources */,
 				9F9568DC258E537800EB2EA5 /* SceneDelegate.swift in Sources */,
 				9F6C91F325D953530043733D /* FeedingListView.swift in Sources */,
+				9FD1726925E91B220017BB89 /* Deneme.swift in Sources */,
 				9F55F9C125A9F755003809F4 /* VerificationView.swift in Sources */,
 				9F55F9BA25A9B60C003809F4 /* MainView.swift in Sources */,
 				9F9F76E225D1591F008DABC6 /* Pet.swift in Sources */,
+				9F2D622F25F6463B0063D8C2 /* FirebaseDataManager.swift in Sources */,
 				9F9568DE258E537800EB2EA5 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

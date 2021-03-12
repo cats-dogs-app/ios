@@ -50,6 +50,8 @@ struct PetFormView: View {
             print(jsonStr)
             do {
                 try FilesManager().save(fileNamed: "pets.json", data: Data(jsonStr.utf8))
+                FirebaseDataManager.manager.saveData(head: "pets", jsonStr: newpet.json(), id: newpetid)
+
             }catch{
                 print(error)
             }

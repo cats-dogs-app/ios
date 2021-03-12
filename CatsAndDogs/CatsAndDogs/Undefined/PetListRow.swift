@@ -21,9 +21,9 @@ struct PetListRow: View {
 
 struct PetListRow_Previews: PreviewProvider {
     
-    static var pets = ModelData().pets
+    //static var pets = ModelData().pets
     
     static var previews: some View {
-        PetListRow(pet: pets[0])
+        PetListRow(pet: Pet())
     }
 }

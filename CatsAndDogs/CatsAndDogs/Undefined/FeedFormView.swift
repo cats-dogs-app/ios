@@ -45,6 +45,8 @@ struct FeedFormView: View {
             print(jsonStr)
             do {
                 try FilesManager().save(fileNamed: "feeds.json", data: Data(jsonStr.utf8))
+                FirebaseDataManager.manager.saveData(head: "feeds", jsonStr: newfeed.json(), id: newfeedid)
+
             }catch{
                 print(error)
             }

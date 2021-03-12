@@ -37,6 +37,9 @@ struct LoginView: View {
             } else {
                 self.isSuccessful = true
                 self.activeUser = self.email
+                
+                // very dangerous approach i think
+                FirebaseDataManager.manager.fetchAll()
                 self.appState.state = "Main"
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2){
@@ -46,6 +49,7 @@ struct LoginView: View {
             }
         }
     }
+
     
     var body: some View {
         

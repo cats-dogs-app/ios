@@ -13,7 +13,7 @@ import FirebaseDatabase
 class FirebaseDataManager: NSObject {
     
     var ref: DatabaseReference!
-    
+        
     static var manager: FirebaseDataManager = {
         return FirebaseDataManager()
     }()
@@ -29,12 +29,13 @@ class FirebaseDataManager: NSObject {
             return
         }
         
-        ref.child("users").child(user.uid).child(head).child("\(id)").setValue(jsonStr);
+        //ref.child("users").child(user.uid).child(head).child("\(id)").setValue(jsonStr);
         
         let jsonData = parseJson(json: jsonStr)
+        var dict : [String : String] = [:]
         for data in jsonData{
-            var key = data.0
-            var value = data.1
+            var key : String = data.0
+            var value : String = data.1
             if key.first == "\"" && key.last == "\""{
                 key.removeLast()
                 key.removeFirst()
@@ -43,9 +44,10 @@ class FirebaseDataManager: NSObject {
                 value.removeLast()
                 value.removeFirst()
             }
-            ref.child("users").child(user.uid).child(head).child("\(id)").child(key).setValue(value)
+            dict[key] = value
         }
-        
+        ref.child("users").child(user.uid).child(head).child("\(id)").setValue(dict)
+
         print("save was a success")
     }
     
@@ -96,16 +98,14 @@ class FirebaseDataManager: NSObject {
         return Int(str) != nil
     }
     
-    func fetchAll(){
+    func fetchAll(completion: @escaping () -> Void){
         guard let user : User = Auth.auth().currentUser else {
             print("no current user sorry")
             return
         }
         
-
-
         ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-          // Get user value
+            // Get user value
             print("=======================")
             print("==let the fetch begin==")
             print("=======================")
@@ -113,55 +113,68 @@ class FirebaseDataManager: NSObject {
                 print("bruh no value")
                 return
             }
+
             for item in value.keys{
-                self.loadFile(head: item)
+                self.loadFile(head: item) {
+                    completion()
+                }
             }
             print("=======================")
-          // ...
-          }) { (error) in
+            // ...
+        }) { (error) in
             print(error.localizedDescription)
         }
     }
     
-    func loadFile(head: String){
+    func loadFile(head: String , completion: @escaping () -> Void){
         guard let user : User = Auth.auth().currentUser else {
             print("no current user sorry")
             return
         }
         
-        var keys :[String] = []
-        
-        self.ref.child("users").child(user.uid).child(head).observeSingleEvent(of: .value) { (snapshot) in
-            
-            print(snapshot)
-            print(snapshot.value)
+        self.ref.child("users").child(user.uid).child(head).observe(.value) { (snapshot) in
+
             guard let value = snapshot.value as? [Any] else {
                 print("bruh " + head)
                 return
             }
-            /*for i in value.keys{
-                keys.append(i)
-            }*/
             
-            for key in keys {
-                self.ref.child("users").child(user.uid).child(head).child(key).observeSingleEvent(of: .value) { (snapshot) in
-                    
-                    guard let value = snapshot.value as? [String : String] else {
-                        print("oww bruh " + head + " - this is bad - " + key)
-                        return
-                    }
-                    
-                    print(self.jsonizer(data: value))
+            var jsonStr : String = "["
+
+            for item in value{
+                guard let dict : [String : Any] = item as? [String:Any] else {
+                    print("no this is not \(item)")
+                    continue
                 }
+                
+                print(dict, "this is fine")
+                
+                jsonStr += "{"
+                for data in dict{
+                    let d = self.isInt(str: (data.value as! String))
+                    jsonStr += "\"" + data.key + "\":"
+                    if (!d){
+                        jsonStr += "\"" + (data.value as! String) + "\""
+                    }else {
+                        jsonStr += (data.value as! String)
+                    }
+                    jsonStr += ","
+                }
+                jsonStr.removeLast()
+                jsonStr += "}"
+                jsonStr += ","
             }
+            jsonStr.removeLast()
+            jsonStr += "]"
+            
+            print(jsonStr)
+            print("thats what i call jsonizer")
+            do {
+                try FilesManager().save(fileNamed: head + ".json", data: Data(jsonStr.utf8))
+            }catch{
+                print(error)
+            }
+            completion()
         }
-        
-        
     }
-    
-    
-    
-    
-    
-    
 }

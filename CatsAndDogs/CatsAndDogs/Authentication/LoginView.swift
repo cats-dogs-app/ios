@@ -15,6 +15,7 @@ let cd_darkgreen : Color = Color("cd_darkgreen")
 
 struct LoginView: View {
     @EnvironmentObject var appState : AppState
+    @EnvironmentObject var modelData: ModelData
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -39,9 +40,10 @@ struct LoginView: View {
                 self.activeUser = self.email
                 
                 // very dangerous approach i think
-                FirebaseDataManager.manager.fetchAll()
+                FirebaseDataManager.manager.fetchAll {                    
+                    self.modelData.refresh()
+                }
                 self.appState.state = "Main"
-                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                     self.isSuccessful = false
                 }

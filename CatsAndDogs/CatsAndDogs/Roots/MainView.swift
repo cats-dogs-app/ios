@@ -14,7 +14,7 @@ import CoreMotion
 
 struct MainView: View {
     @EnvironmentObject var appState : AppState
-    @StateObject private var modelData = ModelData()
+    @EnvironmentObject var modelData : ModelData
 
     func logout(){
         

@@ -13,7 +13,21 @@ final class ModelData: ObservableObject {
     @Published var pets: [Pet] = load("pets.json")
     @Published var feeds : [Feed] = load("feeds.json")
     @Published var feedings : [Feeding] = load("feedings.json")
+    func refresh(){
+        
+        print("refresh data")
+        self.pets = load("pets.json")
+        self.feeds = load("feeds.json")
+        self.feedings = load("feedings.json")
+        print(pets)
+        print(feeds)
+        print(feedings)
+    }
+
+    //@StateObject final private var modelData = ModelData()
+
 }
+
 
 func load<T:Decodable>(_ filename: String) -> T{
     

@@ -19,6 +19,7 @@ struct ArcShape : Shape {
 }
 struct LoginWelcomeView: View {
     
+    @EnvironmentObject var modelData: ModelData
     @State var gologin = false
     
     init() {
@@ -39,7 +40,7 @@ struct LoginWelcomeView: View {
             
             VStack(alignment: .leading){
                 
-                NavigationLink(destination: LoginView(), isActive: $gologin) {
+                NavigationLink(destination: LoginView().environmentObject(modelData), isActive: $gologin) {
                     EmptyView()
                 }
                 

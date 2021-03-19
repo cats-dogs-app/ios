@@ -11,6 +11,7 @@ import Firebase
 
 class AppState: ObservableObject {
     @Published var state = "Auth"
+
     init(state: String) {
         self.state = state
     }
@@ -21,13 +22,15 @@ class AppState: ObservableObject {
 
 struct AppRootView: View {
     @EnvironmentObject var appState : AppState
+    @StateObject private var modelData = ModelData()
+
     var body: some View {
         
         Group{
             if appState.state == "Main"{
-                MainView()
+                MainView().environmentObject(modelData)
             }else {
-                LoginWelcomeView()
+                LoginWelcomeView().environmentObject(modelData)
             }
         }
     }

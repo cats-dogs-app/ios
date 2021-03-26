@@ -16,6 +16,8 @@ struct MainView: View {
     @EnvironmentObject var appState : AppState
     @EnvironmentObject var modelData : ModelData
 
+    private var tabBarTitleEnabled = false
+    
     func logout(){
         
         do {
@@ -31,23 +33,23 @@ struct MainView: View {
         TabView(){
             CatsTabView().tabItem{
                 Image(systemName: "person")
-                Text("Cats")
+                if (tabBarTitleEnabled){Text("Cats")}
             }.environmentObject(modelData)
             DogsTabView().tabItem{
                 Image(systemName: "person")
-                Text("Dogs")
+                if (tabBarTitleEnabled){Text("Dogs")}
             }.environmentObject(modelData)
             StatsTabView().tabItem{
                 Image(systemName: "pencil")
-                Text("Stats")
+                if (tabBarTitleEnabled){Text("Stats")}
             }
             PedometerView().tabItem {
                 Image(systemName: "heart")
-                Text("Pedometer")
+                if (tabBarTitleEnabled){Text("Pedometer")}
             }
             FeedsTabView().tabItem {
                 Image(systemName: "pencil")
-                Text("Feeds")
+                if (tabBarTitleEnabled){Text("Feeds")}
             }.environmentObject(modelData)
         }
         

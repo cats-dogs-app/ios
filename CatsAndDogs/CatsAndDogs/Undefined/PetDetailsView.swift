@@ -119,11 +119,13 @@ struct PetDetailsView: View {
             
             Spacer()
             
+            /*
             NavigationLink(
                 destination: FeedFormView().environmentObject(modelData),
                 label: {
                     Text("New Feed")
                 })
+            */
             
             NavigationLink(
                 destination: FeedingFormView(pet: pet).environmentObject(modelData),

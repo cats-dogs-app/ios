@@ -12,7 +12,7 @@ struct FeedingFormView: View {
     
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var modelData : ModelData
-    @State var pet: Pet = Pet(id: 1, type: "dog", name: "havhav", weight: 1)
+    @State var pet: Pet = Pet()
     @State private var selectedFeed = 0
     @State private var amount = ""
     @State private var date = Date()

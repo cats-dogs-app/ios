@@ -18,6 +18,10 @@ struct MainView: View {
 
     private var tabBarTitleEnabled = false
     
+    init() {
+        
+    }
+
     func logout(){
         
         do {
@@ -32,25 +36,27 @@ struct MainView: View {
         
         TabView(){
             CatsTabView().tabItem{
-                Image(systemName: "person")
+                Image("Cat")
                 if (tabBarTitleEnabled){Text("Cats")}
             }.environmentObject(modelData)
             DogsTabView().tabItem{
-                Image(systemName: "person")
+                Image("Dog")
                 if (tabBarTitleEnabled){Text("Dogs")}
             }.environmentObject(modelData)
-            StatsTabView().tabItem{
+           /* StatsTabView().tabItem{
                 Image(systemName: "pencil")
                 if (tabBarTitleEnabled){Text("Stats")}
-            }
-            PedometerView().tabItem {
-                Image(systemName: "heart")
-                if (tabBarTitleEnabled){Text("Pedometer")}
-            }
+            }*/
             FeedsTabView().tabItem {
                 Image(systemName: "pencil")
                 if (tabBarTitleEnabled){Text("Feeds")}
             }.environmentObject(modelData)
+            
+            PedometerView().tabItem {
+                Image(systemName: "pencil")
+                if (tabBarTitleEnabled){Text("Pedometer")}
+            }
+     
         }
         
         

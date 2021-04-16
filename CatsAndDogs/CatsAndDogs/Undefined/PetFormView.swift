@@ -16,6 +16,9 @@ struct PetFormView: View {
     @State var typeFilter : String = "dog"
     @State var name: String = ""
     @State var weight: String = ""
+    @State var age: String = ""
+    @State var gender: String = ""
+
     
 /*    func json(from object:Any) -> String? {
         guard let data = try? JSONSerialization.data(withJSONObject: object, options: []) else {
@@ -26,14 +29,15 @@ struct PetFormView: View {
     
     func addNewPet(){
         let w = Int(weight) ?? -1
-        if (w == -1){
-            print("weight cannot be converted to int")
+        let ageVal = Int(age) ?? -1
+        if (w == -1 || ageVal == -1){
+            print("weight or age cannot be converted to int")
             return
         }else{
             print(w)
             var newpetid = 1
             newpetid = (modelData.pets.last?.id ?? 0) + 1
-            let newpet = Pet(id:newpetid , type: typeFilter , name:self.name, weight: w)
+            let newpet = Pet(id:newpetid , type: typeFilter , name:self.name, weight: w ,gender: gender , age: ageVal)
             print(newpet)
             modelData.pets.append(newpet)
             
@@ -74,7 +78,8 @@ struct PetFormView: View {
                 
                 Text("Name").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("name of your pet", text: $name).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
+                    TextField("name of your pet", text: $name).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.alphabet)
+                    
                 }
             }.padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 32))
             
@@ -86,6 +91,21 @@ struct PetFormView: View {
                 
             }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
             
+            VStack(alignment: .leading){
+                Text("Gender").font(.headline).foregroundColor(Color("cd_darkgrey"))
+                HStack(){
+                    TextField("gender of your pet", text: $gender).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.alphabet)
+                }
+                
+            }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
+            
+            VStack(alignment: .leading){
+                Text("Age").font(.headline).foregroundColor(Color("cd_darkgrey"))
+                HStack(){
+                    TextField("age of your pet", text: $age).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
+                }
+                
+            }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
             
             Button(action: {
                 print("add new pet button clicked")

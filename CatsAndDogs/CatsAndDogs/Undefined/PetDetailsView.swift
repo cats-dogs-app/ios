@@ -47,6 +47,7 @@ struct PetDetailsView: View {
     
     @EnvironmentObject var modelData : ModelData
     var pet: Pet
+    @State var gotoFeeding : Bool = false
     
     func feedingDataOfPast7Days() -> [BarChartDataEntry]{
         
@@ -127,14 +128,30 @@ struct PetDetailsView: View {
                 })
             */
             
-            NavigationLink(
-                destination: FeedingFormView(pet: pet).environmentObject(modelData),
-                label: {
-                    Text("Feed your pet")
-                })
+            NavigationLink(destination: FeedingFormView(pet: pet).environmentObject(modelData), isActive: $gotoFeeding) {
+                EmptyView()
+            }
+            
+//            NavigationLink(
+//                destination: FeedingFormView(pet: pet).environmentObject(modelData),
+//                label: {
+//                    Text("Feed your pet")
+//                })
 
-            Text(pet.json())
+            //Text(pet.json())
 
+            Button(action: {
+                self.gotoFeeding = true
+            }, label: {
+                HStack(){
+                    Text("Feed your pet").foregroundColor(Color.white)
+                        .padding()
+                        .font(.headline)
+                }.frame(minWidth:0 ,maxWidth: .infinity)
+                .background(mainColor)
+                .cornerRadius(8.0).padding(EdgeInsets(top: 16, leading: 32, bottom: 32, trailing: 32))
+            })
+            
         }
         
     }

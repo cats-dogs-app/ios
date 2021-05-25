@@ -22,7 +22,7 @@ class AppState: ObservableObject {
 
 struct AppRootView: View {
     @EnvironmentObject var appState : AppState
-    @StateObject private var modelData = ModelData()
+    private var modelData = ModelData()
 
     var body: some View {
         

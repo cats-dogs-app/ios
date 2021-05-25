@@ -66,13 +66,13 @@ struct FeedingFormView: View {
     
     var body: some View {
         VStack(){
-            Text("You are about to feed the following pet")
+            Text("You are about to feed your pet!")
             
             Form {
                 Section {
                     Picker("Feed", selection: $selectedFeed) {
                         ForEach(0 ..< modelData.feeds.count) {
-                            Text(modelData.feeds[$0].name)
+                          Text(self.modelData.feeds[$0].name)
                         }
                     }
                     TextField("Amount", text: $amount).keyboardType(.numberPad)

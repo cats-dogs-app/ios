@@ -30,9 +30,9 @@ struct MotionView: View {
             }
             pedometer.queryPedometerData(from: startDate, to: Date()) { (data, error) in
                 guard let data = data, error == nil else {print("no pedometer data mate"); return }
-                steps = data.numberOfSteps.intValue
+              self.steps = data.numberOfSteps.intValue
                 print(data)
-                print(steps ?? " --- ")
+              print(self.steps ?? " --- ")
             }
         }else {
             print("pedometer not available mate")
@@ -88,6 +88,7 @@ struct PedometerView: View {
 
     
     var body: some View {
+      NavigationView() {
         VStack(alignment: .center) {
 
            // MotionView()
@@ -124,6 +125,7 @@ struct PedometerView: View {
                     .cornerRadius(8.0).padding(16)
             })
         }
+      }.navigationBarTitle("Settings")
     }
 }
 

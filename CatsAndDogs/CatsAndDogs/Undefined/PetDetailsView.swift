@@ -117,24 +117,24 @@ struct PetDetailsView: View {
             VStack() {
                 HStack(){
                     Spacer()
-                    Text("name: \(pet.name)")
+                    Text("Name: \(pet.name)")
                     Spacer()
                 }
                 HStack(){
                     Spacer()
-                    Text("gender: \(pet.gender)" )
+                    Text("Gender: \(pet.gender)" )
                     Spacer()
                 }
                 HStack(){
                     Spacer()
-                    Text("age: \(pet.age)")
+                    Text("Age: \(pet.age) months")
                     Spacer()
                 }
                 HStack(){
                     Spacer()
-                    Text("weight: \(pet.weight)")
+                    Text("Weight: \(pet.weight) kg")
                     Spacer()
-                }`
+                }
             }
             Bar(entries: feedingDataOfPast7Days())
             

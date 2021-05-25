@@ -36,7 +36,7 @@ struct FeedsTabView: View {
                     .cornerRadius(8.0).padding(EdgeInsets(top: 16, leading: 32, bottom: 32, trailing: 32))
                 })
             }
-        }
+      }.navigationBarTitle("Feeds")
         
     }
 }

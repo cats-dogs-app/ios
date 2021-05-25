@@ -74,7 +74,7 @@ struct FeedFormView: View {
             VStack(alignment: .leading){
                 Text("Calorie").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("calorie of the feed", text: $calorie).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
+                    TextField("calorie per gram", text: $calorie).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
                 }
                 
             }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))

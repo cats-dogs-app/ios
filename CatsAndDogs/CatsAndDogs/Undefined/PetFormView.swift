@@ -86,7 +86,7 @@ struct PetFormView: View {
             VStack(alignment: .leading){
                 Text("Weight").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("weight of your pet", text: $weight).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
+                    TextField("weight of your pet in kg", text: $weight).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
                 }
                 
             }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
@@ -94,7 +94,7 @@ struct PetFormView: View {
             VStack(alignment: .leading){
                 Text("Gender").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("gender of your pet", text: $gender).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.alphabet)
+                    TextField("gender of your pet (F/M)", text: $gender).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.alphabet)
                 }
                 
             }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
@@ -102,7 +102,7 @@ struct PetFormView: View {
             VStack(alignment: .leading){
                 Text("Age").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("age of your pet", text: $age).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
+                    TextField("age of your pet in months", text: $age).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline).keyboardType(.numberPad)
                 }
                 
             }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))

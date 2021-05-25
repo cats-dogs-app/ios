@@ -36,8 +36,11 @@ struct FeedingListView: View {
     
     var body: some View {
         List(filteredFeedings,id:\.id){ feeding in
-            Text("\(feeding.amount * getFeed(id: feeding.feedId).calorie) cal. \(getFeed(id: feeding.feedId).name) in \(feeding.dateString) ")
+          Spacer()
+          Text(
+            "\(feeding.amount * self.getFeed(id: feeding.feedId).calorie) cal. \(self.getFeed(id: feeding.feedId).name) in \(feeding.dateString.components(separatedBy: "T")[0])")
             //Text("You fed your \(pet?.type ?? "no type") \(pet?.name ?? "no name") on \(feeding.dateString) | feed_id:\(feeding.feedId) amount:\(feeding.amount)")
+          Spacer()
         }
     }
 }

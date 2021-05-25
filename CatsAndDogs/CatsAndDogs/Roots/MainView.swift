@@ -48,13 +48,13 @@ struct MainView: View {
                 if (tabBarTitleEnabled){Text("Stats")}
             }*/
             FeedsTabView().tabItem {
-                Image(systemName: "pencil")
+                Image("Feed")
                 if (tabBarTitleEnabled){Text("Feeds")}
             }.environmentObject(modelData)
             
             PedometerView().tabItem {
-                Image(systemName: "pencil")
-                if (tabBarTitleEnabled){Text("Pedometer")}
+                Image("Settings")
+                if (tabBarTitleEnabled){Text("Settings")}
             }
      
         }

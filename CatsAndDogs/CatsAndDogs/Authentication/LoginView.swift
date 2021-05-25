@@ -71,7 +71,7 @@ struct LoginView: View {
             VStack(alignment: .leading){
                 Text("Password").font(.headline).foregroundColor(Color("cd_darkgrey"))
                 HStack(){
-                    TextField("Type your password", text: $password).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
+                    SecureField("Type your password", text: $password).padding(16.0).background(Color("cd_lightgrey")).cornerRadius(8.0).autocapitalization(.none).font(.headline)
                 }
                 
             }.padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))

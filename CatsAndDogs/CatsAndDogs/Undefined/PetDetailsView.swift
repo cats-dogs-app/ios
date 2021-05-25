@@ -114,11 +114,27 @@ struct PetDetailsView: View {
         
         VStack(alignment: .leading) {
             
-            VStack(alignment: .center){
-                Text("name: \(pet.name)")
-                Text("gender: \(pet.gender)" )
-                Text("age: \(pet.age)")
-                Text("weight: \(pet.weight)")
+            VStack() {
+                HStack(){
+                    Spacer()
+                    Text("name: \(pet.name)")
+                    Spacer()
+                }
+                HStack(){
+                    Spacer()
+                    Text("gender: \(pet.gender)" )
+                    Spacer()
+                }
+                HStack(){
+                    Spacer()
+                    Text("age: \(pet.age)")
+                    Spacer()
+                }
+                HStack(){
+                    Spacer()
+                    Text("weight: \(pet.weight)")
+                    Spacer()
+                }`
             }
             Bar(entries: feedingDataOfPast7Days())
             

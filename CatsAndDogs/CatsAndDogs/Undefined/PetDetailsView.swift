@@ -114,6 +114,12 @@ struct PetDetailsView: View {
         
         VStack(alignment: .leading) {
             
+            VStack(alignment: .center){
+                Text("name: \(pet.name)")
+                Text("gender: \(pet.gender)" )
+                Text("age: \(pet.age)")
+                Text("weight: \(pet.weight)")
+            }
             Bar(entries: feedingDataOfPast7Days())
             
             FeedingListView(pet: pet).environmentObject(modelData)

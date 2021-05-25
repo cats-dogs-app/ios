@@ -25,9 +25,19 @@ struct FeedingListView: View {
         modelData.feedings.filter{feeding in (pet?.id == feeding.petId)}
     }
     
+    func getFeed(id : Int) -> Feed{
+        for feed in modelData.feeds{
+            if (feed.id == id){
+                return feed
+            }
+        }
+        return Feed(id: 0, name: "", calorie: 0)
+    }
+    
     var body: some View {
         List(filteredFeedings,id:\.id){ feeding in
-            Text("You fed your \(pet?.type ?? "no type") \(pet?.name ?? "no name") on \(feeding.dateString) | feed_id:\(feeding.feedId) amount:\(feeding.amount)")
+            Text("\(feeding.amount * getFeed(id: feeding.feedId).calorie) cal. \(getFeed(id: feeding.feedId).name) in \(feeding.dateString) ")
+            //Text("You fed your \(pet?.type ?? "no type") \(pet?.name ?? "no name") on \(feeding.dateString) | feed_id:\(feeding.feedId) amount:\(feeding.amount)")
         }
     }
 }

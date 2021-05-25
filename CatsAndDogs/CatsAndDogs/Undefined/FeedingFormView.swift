@@ -36,6 +36,7 @@ struct FeedingFormView: View {
             print(w)
             var newfeedingId = 1
             newfeedingId = (modelData.feedings.last?.id ?? 0) + 1
+            
             let newFeeding = Feeding(id: newfeedingId, petId: pet.id, feedId: modelData.feeds[selectedFeed].id, amount: w, dateString: getDateStr(date: date))
             print(newFeeding)
             modelData.feedings.append(newFeeding)
@@ -66,7 +67,6 @@ struct FeedingFormView: View {
     var body: some View {
         VStack(){
             Text("You are about to feed the following pet")
-            Text(pet.json())
             
             Form {
                 Section {

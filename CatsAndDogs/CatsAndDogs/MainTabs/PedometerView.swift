@@ -90,7 +90,7 @@ struct PedometerView: View {
     var body: some View {
         VStack(alignment: .center) {
 
-            MotionView()
+           // MotionView()
 
             Text("Hello, You are in the realm of cats and dogs!").foregroundColor(mainColor)
             Text("Its good to see you " + (Auth.auth().currentUser?.email ?? "!!! err: i dont know who u are !!!")).foregroundColor(mainColor)
